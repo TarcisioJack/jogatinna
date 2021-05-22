@@ -1,7 +1,12 @@
 {
   "expo": {
-    "name": "jogatinna",
-    "slug": "jogatinna",
+    "name": "JogaTinna",
+    "slug": "JogaTinna",
+    "privacy": "public",
+    "platforms": [
+      "ios",
+      "android"
+    ],
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -17,13 +22,15 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.tarcisiojack.jogatinna"
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./assets/adaptive-icon.png",
+        "foregroundImage": "./assets/icon.png",
         "backgroundColor": "#FFFFFF"
-      }
+      },
+      "package": "com.tarcisiojack.jogatinna"
     },
     "web": {
       "favicon": "./assets/favicon.png"
