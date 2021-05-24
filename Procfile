@@ -1,1 +1,1 @@
-web: src/services/server.json
+web: yarn start
