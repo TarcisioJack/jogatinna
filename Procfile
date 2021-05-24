@@ -1,1 +1,0 @@
-web:  json-server ./src/services/server.json
