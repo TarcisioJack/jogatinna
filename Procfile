@@ -1,1 +1,1 @@
-web: expo start
+web: src/services/server.json
