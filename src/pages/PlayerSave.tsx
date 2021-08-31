@@ -63,9 +63,13 @@ export function PlayerSave() {
           <ScrollView 
             showsVerticalScrollIndicator={false}
           >
-            <Text style={styles.playerAbout}>
+            <Image
+            source={{uri: player.about}}
+            style={styles.playerAboutIMG}
+            />
+            {/* <Text style={styles.playerAbout}>
               {player.about}
-            </Text>
+            </Text> */}
           </ScrollView>
         </View>
 
@@ -127,6 +131,10 @@ const styles = StyleSheet.create({
     fontSize: 24,
     color: colors.heading,
     marginTop: 15,
+  },
+  playerAboutIMG:{
+    marginTop: 10,
+
   },
   playerAbout: {
     textAlign: 'justify',
