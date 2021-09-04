@@ -4,11 +4,12 @@ import {
   StyleSheet,
   Text,
   View,
-  Image,
-  ScrollView
+  ScrollView,
+  Dimensions
 } from 'react-native';
 import { getBottomSpace } from 'react-native-iphone-x-helper';
 import { useNavigation, useRoute } from '@react-navigation/core';
+import Image from 'react-native-scalable-image';
 
 import { PlayerProps, savePlayer } from '../libs/storage';
 import { Button } from '../components/Button';
@@ -54,18 +55,21 @@ export function PlayerSave() {
         <View style={styles.playerInfo}>
           <Image
             source={{uri: player.photo}}
-            style={{width:200, height:200}}
+            width={Dimensions.get('window').width = 200}
           />
 
           <Text style={styles.playerName}>
             {player.name}
           </Text>
+        </View>
+        
+        <View style={styles.playerAboutIMG}>
           <ScrollView 
             showsVerticalScrollIndicator={false}
           >
             <Image
+            width={Dimensions.get('window').width = 300}
             source={{uri: player.about}}
-            style={styles.playerAboutIMG}
             />
             {/* <Text style={styles.playerAbout}>
               {player.about}
@@ -76,15 +80,17 @@ export function PlayerSave() {
         <View style={styles.controller}>
           <View style={styles.tipContainer}>
             <Image
+              width={Dimensions.get('window').width = 18}
               source={{uri: player.village}}
               style={styles.tipImage}
             />
             <Text style={styles.tipText}>
-              {player.villagename}
+              {player.villa}
             </Text>
 
             <Image
-              source={{uri: player.mark}}
+              width={Dimensions.get('window').width = 18}
+              source={{uri: player.mark || undefined}}
               style={styles.tipImage}
             />
             <Text style={styles.tipText}>
@@ -123,7 +129,7 @@ const styles = StyleSheet.create({
   controller: {
     backgroundColor: colors.white,
     paddingHorizontal: 20,
-    paddingTop: 20,
+    paddingTop: 30,
     paddingBottom: getBottomSpace() || 10
   },
   playerName: {
@@ -133,8 +139,12 @@ const styles = StyleSheet.create({
     marginTop: 15,
   },
   playerAboutIMG:{
-    marginTop: 10,
-
+    flex:1,
+    paddingHorizontal: 30,
+    bottom: 30,
+    alignItems: 'center',
+    justifyContent: 'center',
+    backgroundColor: colors.shape
   },
   playerAbout: {
     textAlign: 'justify',

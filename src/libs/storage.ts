@@ -9,7 +9,7 @@ export interface PlayerProps {
   mark: string;
   clan: string;
   village: string;
-  villagename: string;
+  villa: string;
 }
 
 export interface StoragePlayerProps {
@@ -35,7 +35,7 @@ export async function savePlayer(player: PlayerProps) : Promise<void> {
       ...oldPlayers
     }));
   }catch(error) {
-    throw new Error(error);
+    throw new Error(undefined);
   } 
 }
 
@@ -53,7 +53,7 @@ export async function loadPlayer() : Promise<PlayerProps[]> {
     })
     return playersSorted;
   }catch(error) {
-    throw new Error(error);
+    throw new Error(undefined);
   } 
 }
 
